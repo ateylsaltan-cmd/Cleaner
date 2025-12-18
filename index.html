@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firma sprzątająca „Czysto i Szybko"</title>
+  <style>
+    body { 
+      margin: 0; 
+      font-family: Arial, sans-serif; 
+      line-height: 1.6; 
+    }
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.1);
+      z-index: 0;
+    }
+    header h1 { 
+      font-size: 3rem; 
+      margin-bottom: 10px; 
+      position: relative; 
+      z-index: 1; 
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    header p { 
+      font-size: 1.5rem; 
+      margin-bottom: 20px; 
+      position: relative; 
+      z-index: 1; 
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    header a { 
+      background: white; 
+      color: #667eea; 
+      padding: 12px 25px; 
+      text-decoration: none; 
+      border-radius: 5px; 
+      position: relative; 
+      z-index: 1;
+      display: inline-block;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+    header a:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    section { 
+      padding: 60px 20px; 
+      text-align: center; 
+    }
+    section h2 { 
+      font-size: 2rem; 
+      margin-bottom: 40px; 
+      color: #333;
+    }
+    .row { 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+      gap: 30px; 
+    }
+    .col { 
+      flex: 1 1 250px; 
+      max-width: 300px; 
+      background: #f5f5f5; 
+      padding: 20px; 
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .col:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    .col h3 { 
+      margin-bottom: 15px; 
+      color: #667eea; 
+    }
+    .col img { 
+      width: 100%; 
+      height: 200px; 
+      object-fit: cover; 
+      border-radius: 10px; 
+      margin-bottom: 15px;
+    }
+    .btn { 
+      display: inline-block; 
+      background: #667eea; 
+      color: white; 
+      padding: 10px 20px; 
+      text-decoration: none; 
+      border-radius: 5px; 
+      margin-top: 10px;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background: #5568d3;
+      transform: translateY(-2px);
+      box-shadow: 0 3px 10px rgba(102, 126, 234, 0.4);
+    }
+    footer { 
+      background: #667eea; 
+      color: white; 
+      text-align: center; 
+      padding: 30px 20px; 
+    }
+    .details { 
+      display: none; 
+      text-align: left; 
+      margin-top: 10px; 
+      font-size: 0.9rem; 
+    }
+    .details ul {
+      margin: 5px 0;
+      padding-left: 20px;
+    }
+    .details li {
+      margin: 3px 0;
+    }
+    .show-details { 
+      cursor: pointer; 
+      color: #667eea; 
+      text-decoration: underline; 
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .show-details:hover {
+      color: #5568d3;
+    }
+    #kontakt a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    #kontakt a:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1.2rem;
+      }
+      section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+  <script>
+    function toggleDetails(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <h1>Firma sprzątająca „Czysto i Szybko"</h1>
+  <p>Sprzątanie mieszkań, prywatnych domów i biur w Krakowie i okolicach</p>
+  <a href="#kontakt">Zamów sprzątanie</a>
+</header>
+
+<section id="uslugi">
+  <h2>Nasze usługi</h2>
+  <div class="row">
+    <div class="col">
+      <img src="https://i.ibb.co/xdWGzkk/Mieszkania-i-Dom-Prywatny.jpg" alt="Sprzątanie mieszkań i Dom Prywatny">
+      <h3>Mieszkania i Dom Prywatny</h3>
+      <p>Dokładne sprzątanie mieszkań i domów prywatnych – regularne i generalne.</p>
+      <span class="show-details" onclick="toggleDetails('details-mieszkanie')">Więcej szczegółów</span>
+      <div class="details" id="details-mieszkanie">
+        <strong>Pokój:</strong>
+        <ul>
+          <li>Mycie powierzchni i meblowych frontów</li>
+          <li>Mycie drzwi i parapetów</li>
+          <li>Mycie powierzchni szklanych i luster</li>
+          <li>Mycie radiatorów</li>
+          <li>Zbieranie śmieci</li>
+          <li>Odkurzanie i mycie podłóg</li>
+        </ul>
+        <strong>Kuchnia:</strong>
+        <ul>
+          <li>Mycie powierzchni i meblowych frontów</li>
+          <li>Mycie drzwi i parapetów</li>
+          <li>Czyszczenie sprzętu AGD z zewnątrz</li>
+          <li>Czyszczenie zlewu kuchennego i kuchenki</li>
+          <li>Mycie stołu i krzeseł</li>
+          <li>Wymiana worka na śmieci</li>
+          <li>Odkurzanie i mycie podłóg</li>
+        </ul>
+        <strong>Łazienka i toaleta:</strong>
+        <ul>
+          <li>Mycie powierzchni, meblowych frontów i drzwi</li>
+          <li>Mycie powierzchni szklanych i luster</li>
+          <li>Mycie wanny lub brodzika, kabiny prysznicowej</li>
+          <li>Mycie toalety i bidetu</li>
+          <li>Przecieranie radiatora</li>
+          <li>Wymiana worka na śmieci</li>
+          <li>Odkurzanie i mycie podłóg</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <img src="https://i.ibb.co/4wHxSwqK/Sprz-tanie-biur.jpg" alt="Sprzątanie biur">
+      <h3>Biura</h3>
+      <p>Profesjonalne sprzątanie biur i powierzchni komercyjnych – cena od 2 zł/m².</p>
+    </div>
+    <div class="col">
+      <img src="https://i.ibb.co/2rbRYSN/Czyszczenie-okien.jpg" alt="Czyszczenie okien">
+      <h3>Okna</h3>
+      <p>Czyste okna i witryny bez smug, szybko i solidnie.</p>
+    </div>
+    <div class="col">
+      <img src="https://i.ibb.co/8L8vQjZy/Chemiczne-czyszczenie.jpg" alt="Chemiczne czyszczenie">
+      <h3>Chemiczne czyszczenie</h3>
+      <p>Wykładziny dywanowe od 10 zł/m², reszta usług do ustalenia.</p>
+      <span class="show-details" onclick="toggleDetails('details-chemiczne')">Więcej szczegółów</span>
+      <div class="details" id="details-chemiczne">
+        <ul>
+          <li>Tkaninowe sofy i materace dowolnych rozmiarów</li>
+          <li>Fotele i krzesła</li>
+          <li>Foteliki samochodowe</li>
+          <li>Dywany</li>
+          <li>Wykładziny</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <img src="https://i.ibb.co/Kxc1j8tQ/Sprz-tanie-po-remoncie.jpg" alt="Sprzątanie po remoncie">
+      <h3>Sprzątanie po remoncie</h3>
+      <p>Usuwanie kurzu i pyłu po remontach i modernizacjach.</p>
+    </div>
+    <div class="col">
+      <img src="https://i.ibb.co/JwKjMP5n/Prasowanie.jpg" alt="Prasowanie">
+      <h3>Prasowanie</h3>
+      <p>Prasowanie ubrań, pościeli i innych tkanin, aby były zawsze schludne i gładkie.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cennik" style="background:#f9f9f9;">
+  <h2>Cennik</h2>
+  <div class="row">
+    <div class="col">
+      <h3>Mieszkania</h3>
+      <p>1 pokój: od 150 zł<br>2 pokoje: od 200 zł<br>3 pokoje: od 250 zł<br>4+ pokoje: od 300 zł</p>
+      <a class="btn" href="#kontakt">Zamów</a>
+    </div>
+    <div class="col">
+      <h3>Okna</h3>
+      <p>Jedno-skrzydłowe standardowe: od 20 zł<br>Dwu-skrzydłowe standardowe: od 40 zł<br>Standardowe balkonowe: od 50 zł</p>
+      <a class="btn" href="#kontakt">Zamów</a>
+    </div>
+    <div class="col">
+      <h3>Biuro</h3>
+      <p>od 2 zł/m²</p>
+      <a class="btn" href="#kontakt">Zamów</a>
+    </div>
+    <div class="col">
+      <h3>Sprzątanie po remoncie</h3>
+      <p>od 7 zł/m²</p>
+      <a class="btn" href="#kontakt">Zamów</a>
+    </div>
+    <div class="col">
+      <h3>Chemiczne czyszczenie</h3>
+      <p>Wykładziny dywanowe od 10 zł/m², reszta usług do ustalenia.</p>
+      <a class="btn" href="#kontakt">Zamów</a>
+    </div>
+    <div class="col">
+      <h3>Prasowanie</h3>
+      <p>cena do ustalenia</p>
+      <a class="btn" href="#kontakt">Zamów</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" style="background:#f0f0f0;">
+  <h2>Kontakt</h2>
+  <p>📞 Telefon: <a href="tel:+48786341852">+48 786 341 852</a></p>
+  <p>✉️ Email: <a href="mailto:evenok30@gmail.com">evenok30@gmail.com</a></p>
+  <p>💬 WhatsApp: <a href="https://wa.me/48786341852" target="_blank" rel="noopener">+48 786 341 852</a></p>
+  <p style="margin-top: 20px; font-size: 0.9rem;">YULIIA TARAN, NIP: 6751797031, REGON: 528244740</p>
+</section>
+
+<footer>
+  <p>© 2025 Firma sprzątająca „Czysto i Szybko". Wszelkie prawa zastrzeżone.</p>
+</footer>
+
+</body>
+</html>
